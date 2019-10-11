@@ -1,0 +1,14 @@
+<p>検索</p>
+<%= form_tag(books_search_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
+<ul><% @books.each do |book| %>
+  <li>
+    <%= link_to book.title, book %>
+  </li>
+  <%= link_to "edit",edit_book_path(book) %>
+  <%= link_to "delete",book, method: :delete %>
+  <% end %>
+</ul>
