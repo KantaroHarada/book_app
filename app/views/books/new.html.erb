@@ -1,2 +1,27 @@
+<% provide(:title, 'RegistratioN') %>
+<h1>RegistratioN</h1>
 
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <%= form_for(@book, url: books_registrate_post) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+
+      <%= f.label :author%>
+      <%= f.text_field :author, class: 'form-control' %>
+
+
+      <%= f.label :publisher %>
+      <%= f.text_field :publisher, class: 'form-control' %>
+
+      <%= f.label :genre %>
+      <%= f.text_field :genre, class: 'form-control' %>
+
+      <%= f.submit "Registrate new booK!!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 

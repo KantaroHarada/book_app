@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   def new
+    @book = Book.new
   end
 
   def show
@@ -8,6 +9,14 @@ class BooksController < ApplicationController
   end
 
   def create
+    @book = Book.new(book_params)    # 実装は終わっていないことに注意!
+    if @book.save
+      flash[:success] = "Success!"
+      redirect_to @book
+      # 保存の成功をここで扱う。
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -47,3 +56,4 @@ private
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+

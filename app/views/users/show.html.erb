@@ -12,5 +12,35 @@
       <%= submit_tag 'Search', :name => nil %>
       <% end %>
     </section>
+
+    <section class="col-md-6 col-md-offset-6">
+  <%= form_for(@book, url: books_registrate_path) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+
+      <%= f.label :author%>
+      <%= f.text_field :author, class: 'form-control' %>
+
+
+      <%= f.label :publisher %>
+      <%= f.text_field :publisher, class: 'form-control' %>
+
+      <%= f.label :genre %>
+      <%= f.text_field :genre, class: 'form-control' %>
+
+      <%= f.submit "Registrate new booK!!", class: "btn btn-primary" %>
+    <% end %>
+  </section>
+
+   
   </aside>
+
+
+    
+ 
+   
+
 </div>
